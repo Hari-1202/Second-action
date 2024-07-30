@@ -1,0 +1,16 @@
+name: push_files
+on: push
+jobs:
+  onPushOfFiles:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkoutrepo
+        uses: actions/checkout@v4
+      - name: Install node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install node modules
+        run: npm ci
+      - name: Run test
+        run: npm test
