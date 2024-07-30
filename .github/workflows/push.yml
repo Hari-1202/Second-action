@@ -15,7 +15,7 @@ jobs:
       - name: Run test
         run: npm test
   build:
-    needs: push_files
+    needs: onPushOfFiles
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
